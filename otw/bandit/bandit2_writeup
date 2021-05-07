@@ -1,0 +1,3 @@
+bandit2
+
+Easy! The file was named, spaces in the filename, and obviously had spaces. Wrapping the filename in quotes allows cat to read it.

@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e bandit_levels ]];then
+  exit;
+fi
+
+tail -n1 bandit_levels | awk '{print $1}' | sed 's/bandit//' 

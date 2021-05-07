@@ -1,0 +1,3 @@
+bandit4
+
+Using the file command revealed that -file07 was a plain-text ASCII file and the rest were data files. Then using the command cat with -file07 filepath wrapped in quotes reads the file. 

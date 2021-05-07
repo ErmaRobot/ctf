@@ -1,0 +1,3 @@
+bandit3
+
+In the directory is another directory with apparently nothing inside. Using ls -a shows that there is actually a hidden file .hidden.

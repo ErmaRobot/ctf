@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+
+if [[ $# -ne 1 ]];then
+  echo "bandit_new flag";
+  exit;
+fi
+
+let NEXTLEV=$(./bandit_latest)+1
+
+echo "bandit$NEXTLEV $1" >> bandit_levels

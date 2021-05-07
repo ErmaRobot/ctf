@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+
+if [[ ! -e bandit_levels ]];then
+  exit;
+fi
+
+if [[ $# = 1 ]];then
+  LEVEL="$1"
+else
+  LEVEL="$(./bandit_latest)"
+fi
+
+grep -m1 $(cat bandit_levels | awk '{print $1}' | grep -m 1 $LEVEL) bandit_levels 
+ssh bandit$LEVEL@bandit.labs.overthewire.org -p 2220

@@ -1,0 +1,4 @@
+bandit0
+
+There is one file in the home directory, readme. Using the command cat to concatenate the file contents to the terminal reveals the flag.
+
