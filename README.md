@@ -4,16 +4,11 @@ C.T.F, or capture the flag, is a game that challenges the player to find a parti
 
 ## Why play a Wargame
 
-As they usually revolve about exploiting vulnerable code or having a deep knowledge of webservers and operating systems Wargames are a great way to build your skills as a programmer. Cyber security and writing secure code are becomig more and more relevant and important as our world becomes more reliant on networked computers which store more and more of our important, personal information. 
+As they usually revolve about exploiting vulnerable code or having a deep knowledge of webservers and operating systems Wargames are a great way to build your skills as a programmer. Cyber security and writing secure code are becomig more and more relevant and important as our world becomes more reliant on networked computers which store more and more of our important, personal information. Also they're just fun! 
 
 ## Which games do I play
 
-overthewire.org has a great collection of games for a variety of skill levels.
-bandit - Linux
-natas - Web
-krypton - encryption
-and 
-Leviathan - Linux
+overthewire.org has a great collection of games for a variety of skill levels: bandit - Linux, natas - Web, krypton - encryption, and Leviathan - Linux
 
 They have many more, but these are the ones I have worked on.
 
@@ -25,5 +20,5 @@ Here I have a collection of write ups for the challenges I have completed along 
 
 # SPOILER ALERT
 
-I have had many troubles trying to complete some of these challenges myself. Looking up info for how to overcome them is natural, but don't cheat! There are answers ahead. These challenges can be like trick questions or riddles. Once you know the answer you will never forget. Always try your best and compete with honor!
+I have had many troubles trying to complete these challenges myself. Looking up info for how to overcome them is natural, but don't cheat! There are answers ahead. These challenges can be like trick questions or riddles. Once you know the answer you will never forget. Always try your best and compete with honor!
 
