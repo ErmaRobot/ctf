@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+
+if [[ ! -e _levels ]];then
+  exit;
+fi
+
+if [[ $# = 1 ]];then
+  LEVEL="$1"
+else
+  LEVEL="$(./_latest)"
+fi
+
+grep -m1 $(cat _levels | awk '{print $1}' | grep -m 1 $LEVEL) _levels 
+

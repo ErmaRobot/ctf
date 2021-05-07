@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+
+if [[ $# -ne 1 ]];then
+  echo "new flag";
+  exit;
+fi
+
+let NEXTLEV=$(./_latest)+1
+
+echo "$NEXTLEV $1" >> _levels

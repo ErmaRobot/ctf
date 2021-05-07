@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e _levels ]];then
+  exit;
+fi
+
+tail -n1 _levels | awk '{print $1}' #| sed 's///' 
