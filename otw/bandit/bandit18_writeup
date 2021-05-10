@@ -1,0 +1,4 @@
+Bandit18
+
+The .bashrc file has been modified on this level to automatically log the user out. Not to worry! It's given that the flag is in a readme file in the home directory.
+Adding the cat command to ssh will work fine. ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"

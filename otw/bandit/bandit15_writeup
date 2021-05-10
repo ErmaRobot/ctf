@@ -1,0 +1,4 @@
+Bandit15
+
+This is another pretty easy one. It is alot like 14 except instead of using netcat to connect to the server we have to use openssl s_client. 
+openssl s_client -connect localhost:30001

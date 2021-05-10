@@ -1,10 +1,17 @@
 #! /usr/bin/bash
 
-if [[ $# -ne 1 ]];then
-  echo "bandit_new flag";
-  exit;
-fi
+#if [[ $# -ne 1 ]];then
+#  echo "bandit_new flag";
+#  exit;
+#fi
 
-let NEXTLEV=$(./bandit_latest)+1
+FLAG=$(gpaste-client get 0 | awk '{print $2}')
 
-echo "bandit$NEXTLEV $1" >> bandit_levels
+let LEVEL=$(./bandit_latest)
+let NEXTLEV=$LEVEL+1
+
+echo "bandit$NEXTLEV $FLAG" >> bandit_levels
+
+echo "Bandit$LEVEL" >> bandit"$LEVEL"_writeup
+echo >> bandit"$LEVEL"_writeup
+nano bandit"$LEVEL"_writeup

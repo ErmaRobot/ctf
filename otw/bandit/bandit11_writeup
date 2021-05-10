@@ -1,0 +1,17 @@
+Bandit11
+
+We are given that the characters are encoded by shifting the alphabet characters have been shifted by 13 characters. Counting out the letters it is apparent that
+the encoded alphabet would start at n instead of a. 
+
+01234567890123456789012345
+abcdefghijklmnopqrstuvwxyz
+             ^
+             |
+             13th character
+
+new alphabet
+nopqrstuvwxyzabcdefghijklm
+
+
+Using the tr, translate command, we can decode the data.txt file. cat data.txt | tr [n-za-mN-ZA-M] [a-zA-Z]
+

@@ -1,0 +1,4 @@
+Bandit10
+
+Running file on data.txt returns that data is ASCII. Using cat to read the file shows that the contents of the file are unreadable. We are given that the file is 
+actually encoded in base64. Piping the file contents through the base64 command decodes the data into readable information. cat data.txt | base64 --decode

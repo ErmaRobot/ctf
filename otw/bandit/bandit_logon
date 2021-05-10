@@ -10,5 +10,7 @@ else
   LEVEL="$(./bandit_latest)"
 fi
 
-grep -m1 $(cat bandit_levels | awk '{print $1}' | grep -m 1 $LEVEL) bandit_levels 
+RESULT="$(grep -m1 $(cat bandit_levels | awk '{print $1}' | grep -m 1 $LEVEL) bandit_levels)"
+echo $RESULT
+echo $RESULT | awk '{print $2}' | gpaste-client
 ssh bandit$LEVEL@bandit.labs.overthewire.org -p 2220

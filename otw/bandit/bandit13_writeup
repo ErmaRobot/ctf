@@ -1,0 +1,3 @@
+Bandit13
+
+This one was easy! You are given a private key. Just logon as bandit14 over localhost using the private key file. ssh bandit14@localhost -i sshkey.private

@@ -1,0 +1,4 @@
+Bandit14
+
+Given that there is an open port, 30000, waiting to hear the level 14 password. Nmap confirms the open port. Using the netcat command to connect to localhost port 
+30000, send the password to recieve the password for level 15. nc localhost 30000

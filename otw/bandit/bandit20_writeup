@@ -1,0 +1,6 @@
+Bandit20
+
+This level works like an earlier level but in reverse. The suconnect executable in the home directory connects to a port on the localhost and sends the password for
+the next level if it gets the correct password for the current level. Our job is to setup the server to send the current password. This can be done with netcat easily.
+However we have to have this process running while we run suconnect and to be able to interact with both. To accomplish this we can use tmux. Setup  nc and then split
+the window and use suconnect. The new password can be see in the output of the nc section of the window.

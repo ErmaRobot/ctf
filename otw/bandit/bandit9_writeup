@@ -1,0 +1,5 @@
+Bandit9
+
+There is one file in the directory called data.txt. Checking it with the file command reveals it is a data file, not ASCII text. Running strings command on the file
+prints out the readable string in the file, but there is still alot of nonsense output. We are given that the password is preceded by a number of '=' characters. 
+Piping the strings output through grep and searching for '=' filters out enough and the password is revealed. strings data.txt | grep =

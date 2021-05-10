@@ -1,0 +1,5 @@
+Bandit5
+
+We are given that we are looking for a file that is in the inhere directory and is human-readable, 1033 bytes, and not executable. Using the find command as 
+find /inhere -type f ! -executable -size 1033c we find the flag. -type f looks only at files, ! -executable filters out executable files, -size 1033c looks for
+files that are 1033 bytes long. 
