@@ -1,0 +1,17 @@
+#! /usr/bin/bash
+
+#if [[ $# -ne 1 ]];then
+#  echo "levi_new flag";
+#  exit;
+#fi
+
+FLAG=$(gpaste-client get 0 | awk '{print $2}')
+
+let LEVEL=$(./levi_latest)
+let NEXTLEV=$LEVEL+1
+
+echo "leviathan$NEXTLEV $FLAG" >> levi_levels
+
+echo "Leviathan$LEVEL" >> levi"$LEVEL"_writeup
+echo >> levi"$LEVEL"_writeup
+nano levi"$LEVEL"_writeup

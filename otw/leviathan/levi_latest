@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e levi_levels ]];then
+  exit;
+fi
+
+tail -n1 levi_levels | awk '{print $1}' | sed 's/leviathan//' 
