@@ -1,0 +1,7 @@
+Bandit30
+
+Another git challenge. This one wasn't so bad. I think I am getting into the git frame of mind. Parusing the repo it is apparent that there aren't many files here. The
+obligatory README and thats about it other than internal git stuff. README just contains the taunting phrase "empty file... muahaha" complete with evil laughter, of 
+course. Well the last challenge had multpile branches and I know how to deal with that now! git branch -a just shows the local branch we started when we cloned the
+repo and the remote branch that we cloned from. Damn! Maybe there are notes attached to the one file. Nope! No notes. Maybe tags... Cool! We have a tag called secret,
+but it's a blob object. git cat-file secret reveals the flag.

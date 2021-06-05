@@ -1,0 +1,5 @@
+Bandit31
+
+This might be the easiest git challenge after the first, level 27. After cloning the repo we can read the README file. It tells us the goal of the level which is to 
+push a text file caalled key.txt containing the string "May I come in?". The issue is there is a .gitignore file that tells git to ignore all txt files. Deleting the 
+contents of that file will allows use to make and push the key file. Easy-peasy
