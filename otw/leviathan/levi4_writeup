@@ -1,0 +1,5 @@
+Leviathan4
+
+There is a hidden directory called .trash in the home directory. Inside .trash there is setuid program called bin that prints out a bit pattern with bytes separated by
+spaces. Running this through sed to make the bytes print linewise, with a newline instead of a space between bytes. Copied that into a file and ran it linewise through
+ascii. This command turns the byte bit patterns into the ascii character that it represents. And now we have the password.

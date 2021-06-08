@@ -1,0 +1,4 @@
+Leviathan5
+
+There is a setuid leviathan5 executable in the home directory. Using ltrace we can see that it tries to read from a file /tmp/file.log. Make /tmp/file.log a symlink to 
+leviathan6 password and we got it.

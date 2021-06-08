@@ -1,0 +1,9 @@
+Leviathan2
+
+This one was interesting. Using ltrace we can see whats going on behind the scene. The access system call is made first to see if leviathan2 has rights to the given 
+file. Second printfile sets the uid to leviathan3 and here lies the problem. Access will say that we don't have rights to view /etc/leviathan_pass/leviathan3. It will
+only say that we can access files owned by leviathan2, but when the uid is set by printfile we can only view leviathan3 owned files. The vulnerability is that the 
+string hold the filename we give is fed directly to a call to system with little formatting "/bin/cat %s". Let's make a symlink to /etc/leviathan_pass/leviathan3 
+called blah. Access will say that we don't actually have access to this file though. So we make another file blah\ blah with a sneaky space in the name. Now access 
+will check the file "blah blah". We can access that as leviathan2 just fine. Now we feed that to system "/bin/cat blah blah" and blah -> /etc/leviathan_pass/leviathan3
+gets printed twice. Done! Just make sure to set the permission bits appropriately for the temp directory you work out of. Two restrictive and this won't work.
