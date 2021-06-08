@@ -1,0 +1,43 @@
+Leviathan6
+
+Running the setuid executable in the home directory, leviathan6, it prints a message saying that it is to be called with an argument, a 4 digit code. Running 
+leviathan6 in strings and with ltrace we don't see a code stored in the program. There is a call to atoi though which means that the string we enter in the argument 
+will be turned into an integer and probably compared to an int that is hard coded in the program and not stored in a variable. There is probably a way to disassemble
+the program and find that number but it is only a 4 digit code. We could brute force it pretty easily.
+
+### brute.sh
+
+#! /bin/bash
+
+for t in {0..9}; do
+  for h in {0..9}; do
+    for d in {0..9}; do
+      for o in {0..9}; do
+        echo -n "$t$h$d$o: ";
+        ~/leviathan6 $t$h$d$o;
+      done;
+    done;
+  done;
+done
+
+###
+
+### OUTPUT
+...
+7110: Wrong
+7111: Wrong
+7112: Wrong
+7113: Wrong
+7114: Wrong
+7115: Wrong
+7116: Wrong
+7117: Wrong
+7118: Wrong
+7119: Wrong
+7120: Wrong
+7121: Wrong
+7122: Wrong
+7123: $     <--- we got the shell!
+###
+
+cat /etc/leviathan_pass/leviathan7 and now we have the password too!

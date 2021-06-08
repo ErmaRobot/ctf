@@ -1,0 +1,14 @@
+Leviathan7
+
+This is the end of the wargame. We made it!
+
+### CONGRATULATIONS
+Well Done, you seem to have used a *nix system before, now try something more serious.
+(Please don't post writeups, solutions or spoilers about the games on the web. Thank you!)
+###
+
+This game was still pretty easy, but a nice step up from bandit. I learned about using the ltrace and strings commands and how handy they can be for looking into a 
+program. I am actually surprised with ltrace and strace that they can intercept library and system calls. It makes sense as these are messages being sent to other 
+binaries, shared libraries and the operating system, but still not something that I knew existed before. It also makes sense that you can peer into an executable file
+and see strings. I just would have used xxd before and suffered trying to make sense of the output. My only complaint for this game is the length, but I am feeling
+pretty confident after bandit and now leviathan so I think I will try my hand at a more difficult wargame.
