@@ -1,0 +1,77 @@
+Opened the dirty-underwear site in my webbrowser. Surprisingly tame, but still 
+gross...
+
+Opened robots.txt which shows that there is an upload directory and an upload.php
+
+upload.php wants to upload a jpg file, supplying it with one we see it ends up in 
+the upload directory. upload.php also renames the file and we can see that it does 
+this with hidden variables. The hidden variables are:
+  MAX_FILE_SIZE: 100000
+  filename: [random characters].jpg
+  uploadedfile: file
+  submit: Upload File
+
+tried uploading a php file which was not allowed
+tried uploading a html file, allowed but stripped the file extension off
+tried uploading a php file without the extension, it was uploaded, but not executed
+
+I am on to something.
+
+Apparently something went wrong the first time I tried to upload an html file. I 
+can upload a html and it will display correctly. The problem now is that it 
+mangles the php tags <?php, and ?>
+<?php ... ?>
+      |
+      V
+<!--?php ... ?-->
+which effectively comments out the code
+
+This is actually being done by my browser. .html files are not executed so the 
+incoming <? tag is not understood html and is turned into comments.
+
+This means that I have to figure out how to upload a .php file which indicates 
+that I should try Null Byte injection.
+
+Null byte injection: null byte in filename is rewritten as \0
+
+I wonder if this is due to the library I am using to send http requests. I am
+using python with requests to send requests and BeautifulSoup to parse the 
+HTML
+
+Perhaps there are other file types that are executable. .php and .phtml are listed
+as not being allowed, possible blacklisted. .html is not executed as already 
+noted.
+
+.pht, .inc, .Php, .pHp, .phP, .PHp, .PhP, .pHP, .PHP, .php[3456]
+                                                       ^
+                                                       |
+                                    These are probably prohibited
+
+fucking .pht works!!!!!
+
+I got the webshell and found somebody's password
+george, QWsK294R
+
+user's with home directories
+   carey - sales
+  elaine - HR
+    fred - senior ICT
+X george - ceo
+   scott - junior ICT
+ shelley - IRC Bot
+
+Let's scan the computer for anything related to george using 
+"find / -user george 2> /dev/null" & 
+"find / -group george 2> /dev/null"
+
+found a setgid directory "/var/tmp/george"
+d-wxrws--- 2 george elaine 4096 2021-06-15 20:20 george
+
+and that the group for "/var/run/sudo" is george
+drwx------ 3 root   george   60 2021-06-11 03:32 sudo
+
+fred has ownership of /etc/.group.swp which implies that he has sudo priviledges
+and group ownership of file associated with the apt pkg manager.
+
+fred also owns a setuid executable that shares group ownership with shelley the
+irc bot
