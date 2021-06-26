@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+
+if [[ ! -e natas_levels ]];then
+  exit;
+fi
+
+if [[ $# = 1 ]];then
+  LEVEL="$1"
+else
+  LEVEL="$(./natas_latest)"
+fi
+
+RESULT="$(grep -m1 $(cat natas_levels | awk '{print $1}' | grep -m 1 $LEVEL) natas_levels)"
+echo $RESULT
+echo $RESULT | awk '{print $2}' | gpaste-client
+echo "http://natas$LEVEL.natas.labs.overthewire.org"

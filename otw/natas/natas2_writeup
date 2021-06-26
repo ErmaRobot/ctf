@@ -1,0 +1,5 @@
+Natas2
+
+Looking at the source for the file we see that an image is included from the files directory. Going to http://natas2.natas.labs.overthewire.org/files an index file 
+pops up list the files in the directory. One of those is the users.txt file with the password for natas3. The index is an apache option that will list files in a 
+directory if there is not an index.html file present.

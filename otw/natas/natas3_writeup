@@ -1,0 +1,4 @@
+Natas3
+
+This time no info leaks showing hidden directories, but the comment about google not being able to find the file is a big clue. Checking robots.txt we see the 
+s3cr3t directory is disallowed. Well, inside of /s3cr3t/ is another users.txt. We got it!

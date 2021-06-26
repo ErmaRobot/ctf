@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+FLAG=$(gpaste-client get 0)
+
+let LEVEL=$(./natas_latest)
+let NEXTLEV=$LEVEL+1
+
+echo "natas$NEXTLEV $FLAG" >> natas_levels
+
+echo "Natas$LEVEL" >> natas"$LEVEL"_writeup
+echo >> natas"$LEVEL"_writeup
+nano natas"$LEVEL"_writeup

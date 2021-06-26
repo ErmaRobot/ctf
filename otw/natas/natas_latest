@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e natas_levels ]];then
+  exit;
+fi
+
+tail -n1 natas_levels | awk '{print $1}' | sed 's/natas//' 
