@@ -1,0 +1,4 @@
+Natas6
+
+This was fun! The source code revealed that there is a variable called secret that is in a file in the include directory. Looking it up in the browser with the view-source command displays the secrect. Submitting that value gives us the flag!
+

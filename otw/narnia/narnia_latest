@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e narnia_levels ]];then
+  exit;
+fi
+
+tail -n1 narnia_levels | awk '{print $1}' | sed 's/narnia//' 

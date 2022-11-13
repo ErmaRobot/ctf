@@ -1,4 +1,4 @@
 Bandit21
 
-User bandit22 has a cron job scheduled. Looking in /etc/cron.d we see that bandit22 is running a script in /usr/bin directory. Reading th contents of the file we see
-that the script is writing the flag to a tmp file. Reading the contents of that file yields the password.
+User bandit22 has a cron job scheduled. Looking in /etc/cron.d we see that bandit22 is running a script in /usr/bin directory. Reading the contents of the file we see that the script is writing the flag to a tmp file. Reading the contents of that file yields the password.
+

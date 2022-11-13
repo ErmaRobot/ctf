@@ -1,0 +1,16 @@
+Natas9
+
+This one was alot of fun. Looking at the source file there is a line passthru("grep -i $key dictionary.txt"); The user input is supplied directly to a shell without any sanitization. The output of the system command is returned and printed to the screen. What a perfect place for a command injection! I'll use requests for python to make a post request and then I'll read the returned html with BeautifulSoup.
+
+res = requests.post(url, auth=(name, word), data={'submit':'Search', 'needle':'; cat /etc/natas_webpass/natas10;'})
+
+needle will hold the command injection, described below
+
+; separates us from the grep command so that we can start our own command
+cat ... reads the password file, and
+; separates us from the rest of the string being sent to the server
+
+print(BeautifulSoup(res.text).prettify()) shows us easy to read html
+
+And we can see the password just hanging out waiting for us!
+

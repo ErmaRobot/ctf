@@ -1,6 +1,4 @@
 Bandit22
 
-Bandit22 is very much like Bandit21. The user bandit23 has a cronjob writing to a temporary file. However, this time the name for the temporary is not plainly spelled
-out, but is hash of a string containing user name data. The script uses the whoami command to determine user name which is a red herring. We know that it is bandit23
-running whoami will return bandit22 because we are logged in as bandit22, but the script is ran by bandit23. echo I am user bandit23 | md5sum yields the correct name
-for the temporary file.
+Bandit22 is very much like Bandit21. The user bandit23 has a cronjob writing to a temporary file. However, this time the name for the temporary is not plainly spelled out, but is a hash of a string containing user name data. The script uses the whoami command to determine user name which is a red herring. We know that it is bandit23 running whoami will return bandit22 because we are logged in as bandit22, but the script is ran by bandit23. echo I am user bandit23 | md5sum yields the correct name for the temporary file.
+

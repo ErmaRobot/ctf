@@ -1,4 +1,4 @@
 Natas0
 
-The flag is hidden in the html code. In firefox append view-source: to the beginning of the url to see the html source code for the page. The flag is in a comment 
-towards the end of the file.
+The flag is hidden in the html code. In firefox append "view-source:" to the beginning of the url to see the html source code for the page. The flag is in a comment towards the end of the file.
+

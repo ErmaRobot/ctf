@@ -1,7 +1,4 @@
 Bandit29
 
-I have to admit that I do not know as much as I feel like I should about git and that this lack of knowledge really showed here. This level was still relatively simple
-, but I would have finished so much quicker if I knew how to navigate local and remote branches. Looking at the README file we see that there is "no password in
-production". Big clue right there right!? However git branch only listed the one branch that existed locallly. After pulling my hair out I finally found out that 
-adding the -r option will show remote branches. Surprise the password was in the dev branch! I will have to remember this option in the future, and read the 
-man pages closer...
+I have to admit that I do not know as much as I feel like I should about git and that this lack of knowledge really showed here. This level was still relatively simple, but I would have finished so much quicker if I knew how to navigate local and remote branches. Looking at the README file we see that there is "no password in production". Big clue right there right!? However git branch only listed the one branch that existed locallly. After pulling my hair out I finally found out that adding the -r option will show remote branches. Surprise the password was in the dev branch! I will have to remember this option in the future, and read the man pages closer...
+

@@ -1,11 +1,4 @@
 Bandit32
 
-When I started this project I made a README file that states that there will be spoilers in the repo. I did this so that in the case anybody reads them that they will
-read them carefully to avoid spoilers. I messed up while reasearching this level and spoiled it for myself. I was having trouble figuring out what to try to break the
-shell. Can I use escape characters so that I can input numbers in such a way that they will be read as lowercase characters and not be translated to uppercase 
-characters? No. Can use the -V or -I option to use vi or start an interactive shell? No, the lowercase and uppercase characters v & i where stripped from the input.
-Scouring the manpage I was struggling to find the answer to my problem. So I broke down and turned to the internet. And before I knew it I had seen the answer. Ugh!
-I shouldn't have looked up. I broke my own rule. The answer is actually alot more straight forward than what I was trying, and as soon as I saw it I couldn't unsee it.
-It is immediately obvious. When writing a shell script the special variable $0 refers to the name of the script and using the command line $0 is sh, the shell. Logging
-into bandit31 we can look into the shell that is being used. which sh returns /bin/sh ls -l bin shows that /bin/sh -> /bin/dash. man dash has the tidbit on special
-variables burried in it.
+When I started this project I made a README file that states that there will be spoilers in the repo. I did this so that in the case anybody reads them that they will read them carefully to avoid spoilers. I messed up while reasearching this level and spoiled it for myself. I was having trouble figuring out what to try to break the shell. Can I use escape characters so that I can input numbers in such a way that they will be read as lowercase characters and not be translated to uppercase characters? No. Can use the -V or -I option to use vi or start an interactive shell? No, the lowercase and uppercase characters v & i where stripped from the input. Scouring the manpage I was struggling to find the answer to my problem. So I broke down and turned to the internet. And before I knew it I had seen the answer. Ugh! I shouldn't have looked up. I broke my own rule. The answer is actually alot more straight forward than what I was trying, and as soon as I saw it I couldn't unsee it. It is immediately obvious. When writing a shell script the special variable $0 refers to the name of the script and using the command line $0 is sh, the shell. Logging into bandit31 we can look into the shell that is being used. which sh returns /bin/sh ls -l bin shows that /bin/sh -> /bin/dash. man dash has the tidbit on special variables burried in it.
+

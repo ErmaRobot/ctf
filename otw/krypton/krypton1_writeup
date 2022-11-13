@@ -1,0 +1,4 @@
+Krypton1
+
+Another stright forward level. We are given the encryption scheme, ROT13, which conveniently tells us the key. N  is the 13th letter of the alphabet. Reading the file through the tr command will reveal the contents. cat krypton2 | tr [A-Z] [N-ZA-M]
+

@@ -1,0 +1,8 @@
+Natas8
+
+echo -n '3d3d516343746d4d6d6c315669563362' | xxd -r -p | rev | base64 -d; echo
+
+Running this command in the shell decode the encoded string in the natas8 source file. Lets dissect it. echo -n '...' prints the string to stdout without a triling newline character. We pipe that to xxd -r -p which reverses hex(-r) and expects plain hex(-p), not formatted hex that xxd normally outputs, and sneds the output to stdout. That output is than reversed by the command rev. The reversed output is decoded by base64 -d. The echo at the end appends a newline to the output that makes it easier to read.
+
+So why do all this? The string is triple encoded. First the string, which is also the password, is encoded in base64. That base64 string is then reversed. The  reversed base64 string is finally converted to hexadecimal. Therefore to see the origianl string we must undone those operations starting with the final one and working to the first.
+

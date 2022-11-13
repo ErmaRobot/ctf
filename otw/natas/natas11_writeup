@@ -1,0 +1,18 @@
+Natas11
+
+Level 11 is a nice little ecnryption challenge. We have an encrypted cookie that holds an associative array. Looking at the source file we know the default array. We have everything we need to figure out the key and encrypt our own array. Base64 decode the cookie and use bitwise xor operation on the corresponding bytes of the two strings. The resulting string will be the key repeating for each character of the array strings. Now that we have the key we can adjust our array string and correctly encode it.
+
+default array
+b'{"showpassword":"no","bgcolor":"#ffffff"}'
+        xor
+base64 decoded data(ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw=) cookie
+        ===
+key*(len(deafult array)/len(key))
+
+with the key we can encode our own cookie
+b'{"showpassword":"yes","bgcolor":"#ffffff"}'
+        ==>
+ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK
+
+And now we can see the password!
+

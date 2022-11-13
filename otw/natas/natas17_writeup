@@ -1,0 +1,15 @@
+Natas17
+
+Another sql injection, and with practially the same setup as Natas15. There is one major difference on this level that raises the difficulty. There is no output! The site does not return anything different from a successful query or a failed one. A number of SQL Servers have some way to sleep/delay/waitfor for some number of seconds. MySQL has a sleep function that we can tag onto the end of our level 15 queries.
+
+ 'natas16" and password like binary "{}" -- "'
+               |
+              - -
+              \ /
+               v
+ 'natas18" and password like binary "{}" and sleep({}) -- "'
+
+Now the query will hang for some given number of seconds whenever we get a successful result. Measuring the time of the response we get from the server will tell us which our which queries hit or miss. But... How do we know how long we tell the server to hang? If it hangs for 5 seconds we will definitely understand that to be a hit, but now our script will take a while to finish figuring out all 32 password characters. Even optimising the process with a binary search, a many second delay will slow down our search emensely. 
+
+My first thought, and what I ultimately implemented, was collecting a sample of queries to data not in the database and calculating the standard deviation between the various response times. A difference of 4 standard deviations from the mean puts an event outside of 99.7% of the sample variance making it a special and statistically unique item. Using this approach is useful for the fact that no matter what the network connections throughput is like on any given day, in any given location, the script should calibrate to the current conditions without the need for re-working hard coded variables. I also thought that this would give me the lowest possible delay time. Which it does, but Mysql only waits in whole number of seconds. I routinely found that the optimum wait time was under a second, however I still had to wait longer. If  other servers allow millisecond wait times we could make this approach that much more efficient.
+

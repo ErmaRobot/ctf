@@ -1,0 +1,4 @@
+Natas4
+
+Easy-peasey, lemon-squeezy... Access is disallowed, but we are told that authorized users are from "http://natas5.natas.labs.overthewire.org". Adding a Referer to the HTTP request header using that address gives us a response containing the password to the next level.
+

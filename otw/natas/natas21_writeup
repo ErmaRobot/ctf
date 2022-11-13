@@ -1,0 +1,4 @@
+Natas21
+
+Another session hacking challenge. I acually feel like this level is easier than the last, but still just as if not more informative. So there are two sites hosted on the same server. Session data is apparently stored in the same directory between them both and either server can reference the same session data by using the session id. I set my session id as 'admin' and then used the experimented site to upload "admin" => "1" to the session data. Accessing the 'admin' session on the other site revealed the new flag. I didn't realize that this was a possible issue with php sessions. It seems smart to hae seperate directories for session for each site on the server or even using different chroot or even virtual servers. 
+

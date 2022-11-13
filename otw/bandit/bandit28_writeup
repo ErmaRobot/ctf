@@ -1,5 +1,4 @@
 Bandit28
 
-Another git level, but this time more complex. Again we have a README.md file but the password has been censored. Using git log command we see that there has been 3
-commits. The lastest notes that it has removed an info leak. Well then! Lets revert to the previous commit and see what the leak is! Using git checkout <commit> to
-revert to the previous commit and then cat the README file we see the password. Done!
+Another git level, but this time more complex. Again we have a README.md file but the password has been censored. Using git log command we see that there has been 3 commits. The lastest notes that it has removed an info leak. Well then! Lets revert to the previous commit and see what the leak is! Using git checkout <commit> to revert to the previous commit and then cat the README file we see the password. Done!
+

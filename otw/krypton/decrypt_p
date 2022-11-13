@@ -1,0 +1,16 @@
+#! /usr/bin/python
+
+import sys
+
+if len(sys.argv) != 3:
+  print('decrypt_p <cipher file> <key>')
+
+key = sys.argv[2]
+cipher = ''
+with open(sys.argv[1], 'r') as f:
+  cipher = f.read().lstrip().rstrip()
+
+for i in range(len(cipher)):
+  print(chr((ord(cipher[i]) - ord(key[i%len(key)]) + 26) % 26 + 65), end='')
+print()
+

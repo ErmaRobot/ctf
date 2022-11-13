@@ -2,3 +2,4 @@ Bandit19
 
 There is a setuserid executable in the home directory that will run a command as user 20. Using it to cat the bandit20 pass does the trick.
 ./bandit20-do cat /etc/bandit_pass/bandit20
+

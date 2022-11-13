@@ -1,0 +1,25 @@
+#! /bin/bash
+
+encode(){
+  echo -e -n "\x`printf "%x" "$1"`"
+}
+
+target='53 f4 e3 d0 41 9c 6e 09 57 f5 f8'
+echo $target
+str=''
+for t in $(echo $target);do
+  echo -n "$t:"
+  i=1
+  while (( i < 256  )); do
+    c=`encode $i`
+    out=`ltrace /home/carey/bin/somebinary a "$str$c" 2>&1 | grep strcmp | awk '{print $2}' | sed 's/"//g;s/)//'`
+    if [[ "${out: -2}" == "$t" ]]; then
+      printf "%x \n" $i
+      str="$str$c"
+      break
+    fi
+    i=$(( i + 1 ))
+  done
+done
+echo
+echo $str

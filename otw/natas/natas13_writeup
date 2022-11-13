@@ -1,0 +1,4 @@
+Natas13
+
+Natas challenge does a good job of introducing concepts and then building on them in subsequent levels. The previous challenge introduces uploading a script file  instead of whatever the upload utility politely asks for. This time there are some checks. They're not asking so politely this time. The source file shows that they  use a php function to check the header to determine what the given file is. What if we took the header info from the right kind of image format and then append the php code we used from the previous level? Well that breaks through the defences! We can use xxd to dump plain hex from the begginning of the image file and append hex of the php code. Next xxd to revert the hex dump. Upload it and then request it. Now we got the flag! 
+

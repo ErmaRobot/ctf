@@ -1,0 +1,4 @@
+Natas23
+
+Dude! PHP comparisons are messed up. PHP allows string to number comparisons, integers and floating point, if the string is entirely numeric or leading numeric. Also the strstr function just searches for and returns the first instance of a substring. Did the writers of cloud atlas come up with this function? A leading numeric strstr, leading with an integer greater than 10, evaluates to true-true. The true-true shows the flag.
+

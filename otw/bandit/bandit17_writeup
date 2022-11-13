@@ -1,5 +1,4 @@
 Bandit17
 
-This is pretty straightforward. There are two files passwords.old and new. It is given that the only line that is different between them will have the flag. Using the 
-diff command makes this trivial. diff -y --suppress-common-lines passwords.old passwords.new show the only differing line between the two files. The string on the left
-is on the passwords.new side and is the password for level 18.
+This is pretty straightforward. There are two files passwords.old and .new. It is given that the only line that is different between them will have the flag. Using the diff command makes this trivial. diff -y --suppress-common-lines passwords.old passwords.new shows the only differing line between the two files. The string on the left is on the passwords.new side and is the password for level 18.
+

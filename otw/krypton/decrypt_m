@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+cat $1 | tr [`tail -n1 $1_cipher`] [`head -n1 $1_cipher`]

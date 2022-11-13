@@ -1,0 +1,4 @@
+narnia0
+
+Narnia is definitely a step up from Bandit and Leviathan. The first level starts with some buffer overflow. It is made pretty obvious in the source code, but this is already a more advanced tactic than the other OverTheWire games I have played. Looking at the source code we can see that there is only one function main with two variables that have been declared: one is a character array and another is a long. The way these have been declared indicates they should both be on the stack. Looking at the call to scanf we can also see that the program takes in 24 characters. This is important. The array has a 20 chars length and that a long is 4 bytes. The coders have made sure to hint how many characters to input into the buffer to overwrite the variable.
+

@@ -1,6 +1,4 @@
 Leviathan1
 
-There are a couple of steps to this one. Running strings on check revals that the program setsuid and asks for a password and there are a couple of strings that look
-like they could be passwords. Next running ltrace and giving check one of those strings revals that it is being compared to the string sex. Also writing this up I can
-see that go straight to ltrace whould be the most efficient way to complete this level. Make sure to run check outside of ltrace to get leviathan2 user's id. While in
-ltrace you will be stuck at leviathan1.
+There are a couple of steps to this one. Running strings on check revals that the program setsuid and asks for a password and there are a couple of strings that look like they could be passwords. Next running ltrace and giving check one of those strings revals that it is being compared to the string sex. Also writing this up I can see that going straight to ltrace whould be the most efficient way to complete this level. Make sure to run check outside of ltrace to get leviathan2 user's id. While in ltrace you will be stuck at leviathan1.
+

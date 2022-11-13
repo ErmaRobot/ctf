@@ -1,0 +1,4 @@
+Natas27
+
+I have to come clean. This level totally stumped me. At first I thought that there might be some way to get around mysql_real_escape_string, which apparently there is under vertain circumstances that don't arise in this level. Then I though that maybe there might be some stored xss vulnerability, but that never made a lot of sense. I didn't purse it. But this had me thinking about how storing some data that would work for me. The level has the problem that it returns every entry that has the given username. Doing some research I found out that the way MySQL handles varchars isn't very secure. Strings that are longer than the set size are truncated and trailing spaces are not returned in a query. Apparently this has to do with how the MySQL handles chars. For chars the string is padded with spaces to fit the set size of the field and when varchars are handled it assumes any trailing spaces are padding.
+

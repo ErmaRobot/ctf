@@ -1,0 +1,4 @@
+Krypton
+
+I started this game while working on the webserver game Natas to take a break and learn some new skills. I don't know too much about cryptography beside the very basics so I am excited to learn more about this topic and gets hand on with it. That being said the first level is super simple. The password is actually not encrypted. It is encoded in base64 which is just another way to encode data like utf8 or any other string encoding. It is typically used online because it is print safe. This is improtant for sending data over a network and not accidentally sending a byte that could be interpreted as an end of line, end of file. But, even though base64 encoding is not human readable does not mean that it is encrypted or meaningfully altered/obscured.
+

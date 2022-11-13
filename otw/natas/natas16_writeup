@@ -1,0 +1,14 @@
+Natas16
+
+Level 16 is a variation on the injection theme. This time we returm to the grep shell injection though, and step away from the SQL injections. The difficulty with this challenge over the previous version is that the injection site is wrapped in double quotes meaning whatever we put in there will be treated as a string in the shell command. Luckily in th Linux shell we can do variable expansion inside of double quotes which means we should be able to open a subshell and use the output. 
+
+grep "$key" dictionary.txt
+
+      ^
+     / \
+      |
+
+grep "$(grep ^password /etc/natas_webpass/natas17)flinching" dictionary.txt
+
+The way our injection works is that we open a new shell and use grep to match our password string to the beginning of the natas17 password. If they don't match then the outer command searches for flinching in the dictionary file and displays the only matching word "flinching". On the other hand if our pattern matches the password then the outer command searches for the word flinching with the natas17 password concatenated to the beginning of the string. There is no match for that in dictionary.txt so we are given an empty string in return. Now that we have a way of asking yes and no questions we try evey possible character until we get a positive hit and continue for all 32 characters of the password. Before you know it, if you have a reasonable internet connection, we have the flag.
+

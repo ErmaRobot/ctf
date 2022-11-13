@@ -1,4 +1,4 @@
 Leviathan0
 
-There is a hidden directory, .backup, in the home directory. The cookmarks.html file is pretty big but using grep and searching for leviathan1 reveals the line with 
-the flag. cat bookmarks.html | grep leviathan1
+There is a hidden directory, .backup, in the home directory. The bookmarks.html file is pretty big but using grep and searching for leviathan1 reveals the line with the flag. cat bookmarks.html | grep leviathan1
+

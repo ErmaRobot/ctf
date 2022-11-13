@@ -1,0 +1,7 @@
+#! /usr/bin/bash
+
+if [[ ! -e krypton_levels ]];then
+  exit;
+fi
+
+tail -n1 krypton_levels | awk '{print $1}' | sed 's/krypton//' 

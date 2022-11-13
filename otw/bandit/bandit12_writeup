@@ -1,8 +1,4 @@
 Bandit12
 
-We are told that the file is a hex dump of another compressed file. Using xxd to reverse the dump and running file on the output it is revealed that it is compressed
-with gzip. Easy enough! Using gzip to decompress and then running file on the result reveals that this is also compressed but with bzip2 now! It's evident that there 
-is a compression Inception going on. The operations are best done in a temp folder, WORKD=$(mktemp -d) setups a temporary directory and saves it in the WORKD env 
-variable. In the temp folder run xxd -r on the data.txt redirect to a new data file, xxd -r ~/data.txt >> data. Now each time the file is decompressed with gzip or
-bzip2 redirect the output to a new data file with an incrementing number at the end, cat dataN | gzip -d >> dataN+1, and so on. Eventually the output is not a tar
-archive and not a compressed file so we just extract the file in the archive, tar -f dataN -x. After tediously going throught his process 10 times we get the password.
+We are told that the file is a hex dump of another compressed file. Using xxd to reverse the dump and running file on the output it is revealed that it is compressed with gzip. Easy enough! Using gzip to decompress and then running file on the result reveals that this is also compressed but with bzip2 now! It's evident that there is a compression Inception, Comprection ... Bwahhh, going on. The operations are best done in a temp folder, WORKD=$(mktemp -d) setups a temporary directory and saves it in the WORKD env variable. In the temp folder run xxd -r on the data.txt redirect to a new data file, xxd -r ~/data.txt >> data. Now each time the file is decompressed with gzip or bzip2 redirect the output to a new data file with an incrementing number at the end, cat dataN | gzip -d >> dataN+1, and so on. Eventually the output is not a tar archive and not a compressed file so we just extract the file in the archive, tar -f dataN -x. After tediously going throught his process 10 times we get the password.
+

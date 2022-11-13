@@ -1,0 +1,4 @@
+Natas18
+
+Oh yeah! We are done with injections, finally! More like for now. I am sure there will be more shell and sql injections up ahead, but right now we're session hijcking! Looking at the source we see that each session is given a number between 1 and 640. Well lets start at 1 and iterate through all the possible sessions until we find anadmin. And that about it for this level. More of this style of attack to come!
+

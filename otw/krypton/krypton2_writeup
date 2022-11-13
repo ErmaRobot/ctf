@@ -1,0 +1,11 @@
+Krypton2
+
+Ceasar is Easy! This is also pretty straight forward. The README states that this level is using a simple ceasar cipher, which is a rotation cipher like ROT13, that allows the user to user whatever number of rotations they desire. Any rotation past the length of characters in the alphabet is functionally the same as rotating by the modulus of the desired rotation. We are also given an encryption binary that will encrypt whatever file we give it using the rotation algorithm. Feeding the binary a filecontaining the alphabet tells us exactly how to translate the flag. 
+
+echo "ABCDEFGHIJKLMNOPQRSTUVWXYZ" > test
+./encrypt test
+cat /krypton/krypton2/krypton3 | sed "s/ //" | tr [...] [A-Z]
+                                                   ^ 
+                                                   |
+                       whatever is determined from reading the ciphertext file resulting from test
+                       

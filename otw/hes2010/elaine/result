@@ -1,0 +1,17 @@
+ltrace /home/carey/bin/somebinary a a &> result
+
+__libc_start_main(0x804881b, 3, 0xbffff834, 0x8048870, 0x8048860 <unfinished ...>
+strlen("a")                                      = 1
+strlen("T")                                      = 1
+strlen("T")                                      = 1
+calloc(1, 3)                                     = 0x0804b008
+strlen("T")                                      = 1
+strlen("T")                                      = 1
+printf("out = %s\n", "45")                       = 9
+strlen("T")                                      = 1
+calloc(1, 3)                                     = 0x0804b018
+strlen("T")                                      = 1
+strlen("T")                                      = 1
+strcmp("53f4e3d0419c6e0957f5f8", "45")           = 1
+out = 45
++++ exited (status 0) +++

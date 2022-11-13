@@ -1,0 +1,14 @@
+Natas14
+
+Simple SQL injection. The source shows that usename and password are pulled straight from the user input. Just like with other injections we have to change the meaning of the query or stop it and start a new one. Let's first stop anything from after where the username parameter is incorporated from making a difference. -- comments out everything after it so that will be at the end of our injection to obliterate the SQL that would have come after. Let's also give the query a usename to lookup and close the string. The name doesn't really matter; we're just doging syntax errors. a" should do the trick! Now that the starting SQL is syntactically doing well, and the ending SQL is commented out, the real fun can start. username = "a" isn't going to match to a damn thing, but this is a part of the boolean expression in the where clause. We know that username = "a" is going to be false so we need to 'or' it with something that will absolutely be true. 1=1 is a pretty good option right! Lets look at the whole injection and how it fits into the query.
+
+a" or 1=1 -- "
+
+SELECT * from users where username="a" or 1=1 -- "" and password=""
+
+                                              ^^ ---------> commented
+                                          ^^^-----------> always true
+                                       ^^--> always evaluates to true
+
+This injection should yield every entry in the users table which will hopefully be greater than 0 and allow us to login and reveal the flag.
+

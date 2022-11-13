@@ -1,0 +1,15 @@
+Natas10
+
+Level 10 builds on level 9. It is still a command injection but this time the user input is scanned for characters: ; and &. Now we can't start our own command, we  have to use theirs. This isn't an issue depending on how you solved the previous level. Anything that works on this level will work on level 9, but the one I  described in the natas9 writeup will not. The issue is that we have to get grep to do what we want. We can't use an easier command, like cat, to do the work for us.
+
+1) grep will match a pattern across a list of files, so we can enter the file we actually want to read so that the pattern will matched to it and dictionary.txt
+2) grep uses regular expressions and we can write an expression to match anything
+    [[:alnum:]]* <- any combination of alphabet and digit characters of any length
+3) we can limit the number of matches to 1 giving us the first match, basically skipping dictionary.txt -m1
+
+grep -i $key dictionary.txt
+$key = -m1 '[[:alnum:]]*' /etc/natas_webpass/natas11
+grep -i -m1 '[[:alnum:]]*' /etc/natas_webpass/natas11 dictionary.txt
+
+I used requests to post my input to the webpage. I prefer this over trying to work in the browser because I have more control over how the string is represented.  There are powerful programs meant for this kind of work. I just like doing this stuff at a lower level. A more convenient way to work at this level but while being able to do it straight from the terminal, instead of the interactive python shell, would be curl. I might try that in later challenges.
+

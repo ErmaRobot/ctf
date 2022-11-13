@@ -1,0 +1,4 @@
+Natas24
+
+Another level taking advantage of the odd way PHP does comparisons. This time specifically the function strcmp. The c analog of this function takes two char pointers, c strings, and compares them character by character as they occur in the ascii table. The fact that the function takes pointers as variables raises some possible red flags to it's security and reliability, and PHP does no better. Looking at various resources, including PHP's own online manual, we see that strcmp will take in data types other than strings, such as; arrays, objects, etc. Specifically sending an array will cause strcmp to return NULL, which in a boolean expression is evaluate to false. The exploit comes in the fact that in the source for this level the output of strcmp is negated. Not false being true we see our glorious flag.
+

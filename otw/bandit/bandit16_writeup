@@ -1,7 +1,4 @@
 Bandit16
 
-It is given that there is an open port between 31000 and 32000 using ssl that will yield credentials when the password to the current level is sent to it. The nmap 
-command shows that there is a short list of open ports, nmap localhost -p31000-32000. Using s_client to connect to them one at time some don't work because they are
-not using ssl, and others will connect but will only echo what is sent to them, openssl s_client -connect localhost:XXXXX. Finally one of these connections returns
-an RSA private key. This can be copied and pasted into a file and used to logon to the next level. Make sure to set the file permissions on the key file correctly so
-that ssh will use it, chmod 400 keyfile, ssh bandit17@localhost -i keyfile. Read the password as bandit 17. 
+It is given that there is an open port between 31000 and 32000 using ssl that will yield credentials when the password to the current level is sent to it. The nmap command shows that there is a short list of open ports, nmap localhost -p31000-32000. Using s_client to connect to them one at time. Some don't work because they are not using ssl, and others will connect but will only echo what is sent to them, openssl s_client -connect localhost:XXXXX. Finally one of these connections returns an RSA private key. This can be copied and pasted into a file and used to logon to the next level. Make sure to set the file permissions on the key file correctly so that ssh will use it, chmod 400 keyfile, ssh bandit17@localhost -i keyfile. Read the password as bandit 17. 
+

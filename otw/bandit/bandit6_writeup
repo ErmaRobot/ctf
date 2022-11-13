@@ -1,5 +1,4 @@
 Bandit6
 
-This one is much like the previous. The file is somewhere on the server instead of in a specific directory however this means looking in the root directory instead. We
-are given that the file is in the bandit6 group and is owned by bandit7 and is 33 bytes in size. Running find command as find / -group bandit6 -user bandit7 -size 33c 
-reveals the file along with a ton of stuff that are premission denied! 
+This one is much like the previous. The file is somewhere on the server instead of in a specific directory however this means looking in the root directory instead. We are given that the file is in the bandit6 group and is owned by bandit7 and is 33 bytes in size. Running find command as find / -group bandit6 -user bandit7 -size 33c reveals the file along with a ton of stuff that are premission denied! Those permission denied lines can be filtered out by redirecting stderr to null "2> /dev/null".
+

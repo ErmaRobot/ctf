@@ -8,16 +8,11 @@ Second: cat /etc/passwd | grep bandit26 reveals the shell to be set as /usr/bin/
 
 Third: cat /usr/bin/showtext reveals a shell script that basically just uses more to write a text file to the screen, again No Big Deal, its just more right...
 
-Fourth: use ssh to logon as bandit26 on localhost using the given key. Make sure to shrink your terminal window so that more doesn't immediately print everything and
-  close. All of these no big deals coalesce here. So more is running and I press v to enter the vi editor and before I can run a shell command or try editing a 
-  different file, maybe the bandit26 password file, vi acts like I am trying to edit a readonly file and I can no longer do anything... even quit!
+Fourth: use ssh to logon as bandit26 on localhost using the given key. Make sure to shrink your terminal window so that more doesn't immediately print everything and close. All of these no big deals coalesce here. So more is running and I press v to enter the vi editor and before I can run a shell command or try editing a  different file, maybe the bandit26 password file, vi acts like I am trying to edit a readonly file and I can no longer do anything... even quit!
 
-Fifth: I am dying for answers. I'm sure that my approach is good, but it's not yeilding any results. So I go against my own advice and look up what other people have
-  tried. The thing is everybody was basically doing what I was doing. So I did the only thing I could think over other than beat my head into the wall. I tried a 
-  different terminal emulator. I have been trying out alternate terminals, and have been using terminology recently. It has some fun fun features such as window 
-  splitting that gives some of the benefits of a window manager, but I had a feeling something was wrong.
+Fifth: I am dying for answers. I'm sure that my approach is good, but it's not yeilding any results. So I go against my own advice and look up what other people have tried. The thing is everybody was basically doing what I was doing. So I did the only thing I could think over other than beat my head into the wall. I tried a  different terminal emulator. I have been trying out alternate terminals, and have been using terminology recently. It has some fun fun features such as window  splitting that gives some of the benefits of a window manager, but I had a feeling something was wrong.
 
 Sixth: I user the boring old terminal that ships with fedora, and everything I had been trying worked out just fine.
 
-The take away from this is that there is a difference between terminals and that the differences aren't always noticeable under normal conditions. Honestly I don't 
-know why one worked and the other didn't. This requires some extra research and maybe another walkthrough and an addendum to this one.
+The take away from this is that there is a difference between terminals and that the differences aren't always noticeable under normal conditions. Honestly I don't  know why one worked and the other didn't. This requires some extra research and maybe another walkthrough or an addendum.
+

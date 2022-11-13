@@ -1,6 +1,4 @@
 Leviathan3
 
-Trying out the level3 executable it asks for a password. Entering a random phrase I am not surprised to see it doesn't work. No matter. Next using the command ltrace
-I see that two strings are being compared h0no33 and s3cr3t and that the password I just entered randomly again is being compared to snlprintf. Too easy. We got the 
-shell. Using the strings command on the level3 executable would have given me red herring after red herring. snlprintf would have shown up, but so do other function 
-names sometimes. Doesn't matter now though. We just got the password.
+Trying out the level3 executable it asks for a password. Entering a random phrase I am not surprised to see it doesn't work. No matter. Next using the command ltrace I see that two strings are being compared h0no33 and s3cr3t and that the password I just entered randomly again is being compared to snlprintf. Too easy! We got the shell. Using the strings command on the level3 executable would have given me red herring after red herring. snlprintf would have shown up, but so do other function names sometimes. Doesn't matter now though... We just got the password!
+

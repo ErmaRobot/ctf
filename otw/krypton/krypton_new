@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+FLAG=$(gpaste-client | head -n1 | awk '{print $2}')
+
+let LEVEL=$(./krypton_latest)
+let NEXTLEV=$LEVEL+1
+
+echo "krypton$NEXTLEV $FLAG" >> krypton_levels
+
+echo "Krypton$LEVEL" >> krypton"$LEVEL"_writeup
+echo >> krypton"$LEVEL"_writeup
+nano krypton"$LEVEL"_writeup

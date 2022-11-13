@@ -1,0 +1,8 @@
+Natas12
+
+I like this level. Letting people upload files to your server introduces the risk of people uploading executable scripts that can run server-side when not done correctly. And that is exactly the case on level 12! Looking at the source file we see that the file extension of the server's copy of the file is determined by looking at the extension of the given filename. This means that even though this file upload is meant only for .jpg's we can actually upload any time of file, even executable .php files! Let's write some quick php code to read the password file ...
+
+<? passthru("cat /etc/natas_webpass/natas13"); ?>
+
+Putting that in our upload file, uploading it with the file extension .php, and opening the file through the link we recieve in the response yields the precious flag. 
+

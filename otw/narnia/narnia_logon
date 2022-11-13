@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+
+if [[ ! -e narnia_levels ]];then
+  exit;
+fi
+
+if [[ $# = 1 ]];then
+  LEVEL="$1"
+else
+  LEVEL="$(./narnia_latest)"
+fi
+
+RESULT="$(grep -m1 $(cat narnia_levels | awk '{print $1}' | grep -m 1 $LEVEL) narnia_levels)"
+echo $RESULT
+echo $RESULT | awk '{print $2}' | gpaste-client
+ssh narnia$LEVEL@narnia.labs.overthewire.org -p 2226

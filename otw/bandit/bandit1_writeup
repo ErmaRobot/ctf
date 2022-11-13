@@ -1,4 +1,4 @@
 bandit1
 
-This one was surprisingly tricky. The file is named - which apparently is a valid filename! Trying to read the file using cat like in the previous level doesn't work.
- When using cat -, cat reads from STDIN. Entering the filename with the relative path ./- gets around this weird behaviour. 
+This one was surprisingly tricky. The file is named "-", which apparently is a valid filename! Trying to read the file using cat like in the previous level doesn't work. When using cat -, cat reads from STDIN. Entering the filename with the relative path ./- gets around this weird behaviour. 
+

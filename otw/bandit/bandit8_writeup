@@ -1,4 +1,4 @@
 Bandit8
 
-It is given that the flag we are looking for is the only unique line in the data.txt file. The command uniq only recognizes adjacent duplicate lines. Sort will sort
-the data by line. We can use cat to read the file sort it and then use uniq to print out the only unique line. cat data.txt | sort | uniq -u
+It is given that the flag we are looking for is the only unique line in the data.txt file. The command uniq only recognizes adjacent duplicate lines. Sort will sort the data by line. We can use cat to read the file sort it and then use uniq to print out the only unique line. cat data.txt | sort | uniq -u
+

@@ -1,0 +1,12 @@
+#! /usr/bin/bash
+
+FLAG=$(gpaste-client | head -n1 | awk '{print $2}')
+
+let LEVEL=$(./narnia_latest)
+let NEXTLEV=$LEVEL+1
+
+echo "narnia$NEXTLEV $FLAG" >> narnia_levels
+
+echo "narnia$LEVEL" >> narnia"$LEVEL"_writeup
+echo >> narnia"$LEVEL"_writeup
+nano narnia"$LEVEL"_writeup

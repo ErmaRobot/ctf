@@ -1,0 +1,19 @@
+Natas19
+
+Natas 19 is an evolution of Natas 18. The site claims that the cookies are not sequential and goes out of its' way to make them look interesting. Lets take a look at some cookies and see what we can see. Running a simple script lets collect 10 cookies:
+
+3431312d61
+3633352d61
+3536342d61
+3332342d61
+3633332d61
+3632312d61
+  38332d61
+3338322d61
+3530362d61
+3631302d61
+^ ^ ^ ^
+| | | |
+3 3 3 2d61
+
+We can see that there is a constant tag of 2d61 concatenated to the end of an integer where every other letter is a 3. Removing the 3s and the tag we see that the cookies don't look much different than the previous level. Additionaly the tag looks like it's in hexadecimal. Decoding it reveals it to be '-a'. Lets alter the code from the previous level to still try numbers between 1 and 640 while interleaving 3s between the digits of our number. Also we will allow the user to give a tag that will be encoded in hexadecimal and append that to our new session id. Running the code with the tag '-a' doesn't yield any admin sessions, but using the code '-admin' does. 

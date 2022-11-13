@@ -1,0 +1,4 @@
+Natas7
+
+A simple page parameter gave up acccess to the password files! Using basic linux relative file paths we can enter just about any file into that page parameter. Entering the path to the password to the next level gives us the flag.
+

@@ -1,14 +1,11 @@
 Bandit23
 
-Another cron job, but this time the timing of the script is important. Reading the contents of cronjob_bandit24 in /etc/cron.d we see that the script, 
-/usr/bin/cronjob_bandit24.sh, is ran at reboot and at every minute. 
+Another cron job, but this time the timing of the script is important. Reading the contents of cronjob_bandit24 in /etc/cron.d we see that the script, /usr/bin/cronjob_bandit24.sh, is ran at reboot and at every minute. 
 
 @reboot bandit24 /usr/bin/cronjob_bandit24.sh  #<-- at reboot
 ***** bandit24 /usr/bin/cronjob_bandit24.sh    #<-- every minute
 
-We can also see that cronjob_bandit24.sh will execute every script in /var/spool/bandit24 and then delete them all. That will be our attack vector. Upload a script to 
-that directory that will read the password and write it somewhere that we can see it. There are two ways that I see to do that; one way will write to a file, and the 
-other will write to a netcat server that we set up. First lets make a temporary folder to write scripts to and make sure that others users can read and write it.
+We can also see that cronjob_bandit24.sh will execute every script in /var/spool/bandit24 and then delete them all. That will be our attack vector. Upload a script to that directory that will read the password and write it somewhere that we can see it. There are two ways that I see to do that; one way will write to a file, and the other will write to a netcat server that we set up. First lets make a temporary folder to write scripts to and make sure that others users can read and write it.
 
 WORKD=$(mktemp -d)
 chmod 777 $WORKD
@@ -45,5 +42,5 @@ split-window
 
 cp $WORKD/exploit2 /var/spool/bandit24/exploit2
 
-Now that is a full days work. Lets get a fire going in the fireplace, brew some hot cocoa, and cuddle up around the terminal waiting for the password to show up on 
-screen.
+Now that is a full days work. Lets get a fire going in the fireplace, brew some hot cocoa, and cuddle up around the terminal waiting for the password to show up on screen.
+

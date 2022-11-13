@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-FLAG=$(gpaste-client get 0)
+FLAG=$(gpaste-client | head -n1 | awk '{print $2}')
 
 let LEVEL=$(./natas_latest)
 let NEXTLEV=$LEVEL+1

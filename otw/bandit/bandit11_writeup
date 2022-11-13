@@ -1,7 +1,6 @@
 Bandit11
 
-We are given that the characters are encoded by shifting the alphabet characters have been shifted by 13 characters. Counting out the letters it is apparent that
-the encoded alphabet would start at n instead of a. 
+We are told that the characters are encoded by shifting the alphabet characters by 13 characters. Counting out the letters it is apparent that the encoded alphabet would start at n instead of a. 
 
 01234567890123456789012345
 abcdefghijklmnopqrstuvwxyz
